@@ -253,12 +253,12 @@ function up() {
     # number of times to move up in the directory tree
     TIMES=$1
 
-    if [ -z $TIMES ]; then
+    if [ -z ${TIMES} ]; then
         TIMES=1
     fi
     while [ ${TIMES} -gt 0 ]; do
         cd ..
-        TIMES=$(($TIMES - 1))
+        TIMES=$((${TIMES} - 1))
     done
 }
 
